@@ -1,0 +1,718 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: 100%;
+  display: block;
+}
+
+button {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+body {
+  font-family: 'Samsung Sharp Sans', sans-serif;
+  font-size: 16px;
+  background-image: url('./img/main-bg.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slideshow-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 1240px;
+  width: 100%;
+  max-height: 700px;
+  height: 100%;
+  margin: 80px;
+}
+
+.samsung-logo {
+  position: absolute;
+  top: 120px;
+  left: 58px;
+  width: 186px;
+}
+
+.logo-animate {
+  animation: slideInAndMoveUp 2s ease-in-out forwards;
+}
+
+@keyframes slideInAndMoveUp {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-70px);
+    opacity: 1;
+  }
+}
+
+.subbrend-logo {
+  position: absolute;
+  top: 45px;
+  right: 55px;
+  font-weight: bold;
+  font-size: 34px;
+  color: white;
+  z-index: 10;
+}
+
+.subbrend-logo span {
+  font-weight: 500;
+}
+
+.slogan {
+  position: absolute;
+  left: 58px;
+  top: 136px;
+  transition: transform 0.8s ease-in-out;
+}
+
+.slogan p {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.line-1,
+.line-2,
+.line-3 {
+  opacity: 0;
+}
+
+/* .line-1 {
+  animation: slideFromLeft 1.2s ease-in-out forwards;
+  animation-delay: 1.3s;
+}
+
+.line-2 {
+  animation: slideFromLeft 1.2s ease-in-out forwards;
+  animation-delay: 1.5s;
+}
+
+.line-3 {
+  animation: slideFromLeft 1.2s ease-in-out forwards;
+  animation-delay: 1.7s;
+} */
+
+.line1-animation {
+  animation: slideFromLeft 1.2s ease-in-out forwards;
+  animation-delay: 1.3s;
+}
+
+.line2-animation {
+  animation: slideFromLeft 1.2s ease-in-out forwards;
+  animation-delay: 1.5s;
+}
+
+.line3-animation {
+  animation: slideFromLeft 1.2s ease-in-out forwards;
+  animation-delay: 1.5s;
+}
+
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.kitchn-logo {
+  position: relative;
+  padding-left: 40px;
+  font-weight: normal;
+}
+
+.kitchn-logo::before {
+  position: absolute;
+  content: '';
+  background-image: url('./img/kitchn-logo.png');
+  background-size: 32px 32px;
+  width: 32px;
+  height: 32px;
+  top: 0;
+  left: 0;
+}
+
+.text-down {
+  transform: translateY(25px);
+}
+
+.text-up {
+  transform: translateY(-20px);
+}
+
+.hidden {
+  display: none;
+}
+
+.pagination {
+  position: absolute;
+  left: 58px;
+  bottom: 161px;
+  opacity: 0;
+  animation: textFade 1s ease-in-out forwards;
+}
+
+.pagination button {
+  border: none;
+  font-size: 27px;
+  animation: pagAnimate 1.5s ease-in-out 2;
+}
+
+.pagination span {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 0 10px;
+}
+
+.prev:active,
+.next:active {
+  color: #808080;
+  transition: all 0.3s ease;
+  transform: scale(0.9);
+}
+
+.btn-active {
+  color: #808080;
+  transition: all 0.5s ease;
+  transform: scale(0.9);
+}
+
+@keyframes pagAnimate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn-buy {
+  position: absolute;
+  bottom: 52px;
+  left: 66px;
+  font-size: 25px;
+  text-transform: uppercase;
+  padding: 21px 35px;
+  border: 2px solid black;
+  border-radius: 60px;
+  animation: textFade 1s ease-in-out forwards,
+    buttonBuyAnimate 3s ease-in-out infinite;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn-buy:hover {
+  transform: scale(1.1);
+  animation: textFade 0s;
+}
+
+@keyframes buttonBuyAnimate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes textFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.slide {
+  max-width: 1240px;
+  width: 100%;
+  max-height: 1053px;
+  height: 100%;
+  border: 4px solid black;
+  overflow: hidden;
+}
+
+.trademark {
+  font-weight: 500;
+}
+
+.blockquote {
+  position: absolute;
+  padding-top: 320px;
+  padding-left: 58px;
+  font-size: 18px;
+  font-weight: 500;
+  animation: slideInFromRight 0.8s ease-out;
+  transition: transform 0.3 ease-in-out;
+}
+
+.blockquote p {
+  line-height: 1.7;
+}
+
+.blockquote a {
+  color: #808080;
+  z-index: 11;
+  cursor: pointer;
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-left {
+  max-width: 656px;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.slide-right {
+  animation: fadeAnimation 0.7s ease-out;
+  transition: transform 0.3 ease-in-out;
+}
+
+@keyframes fadeAnimation {
+  from {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  .slideshow-container {
+    max-width: 1025px;
+    max-height: 579px;
+  }
+
+  .slide-left {
+    max-width: 559px;
+  }
+
+  .samsung-logo {
+    top: 100px;
+    left: 40px;
+    width: 156px;
+  }
+
+  @keyframes slideInAndMoveUp {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    50% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-60px);
+      opacity: 1;
+    }
+  }
+
+  .slogan {
+    top: 108px;
+    left: 40px;
+  }
+
+  .slogan p {
+    font-size: 27px;
+  }
+
+  .subbrend-logo {
+    top: 33px;
+    right: 45px;
+    font-size: 29px;
+  }
+
+  .blockquote {
+    padding-top: 270px;
+    padding-left: 40px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .pagination {
+    left: 40px;
+    bottom: 130px;
+  }
+
+  .pagination button {
+    font-size: 20px;
+  }
+
+  .pagination span {
+    font-size: 20px;
+    margin: 0 5px;
+  }
+
+  .btn-buy {
+    left: 42px;
+    bottom: 44px;
+    font-size: 21px;
+    padding: 20px 30px;
+  }
+
+  .text-down {
+    transform: translateY(25px);
+  }
+
+  .text-up {
+    transform: translateY(0px);
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .slideshow-container {
+    max-width: 830px;
+    max-height: 490px;
+  }
+
+  .slide-left {
+    max-width: 455px;
+    width: 121%;
+  }
+
+  .samsung-logo {
+    top: 80px;
+    left: 40px;
+    width: 136px;
+  }
+
+  @keyframes slideInAndMoveUp {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    50% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-40px);
+      opacity: 1;
+    }
+  }
+
+  .slogan {
+    top: 86px;
+    left: 40px;
+  }
+
+  .slogan p {
+    font-size: 22px;
+  }
+
+  .text-down {
+    transform: translateY(25px);
+  }
+
+  .text-up {
+    transform: translateY(0px);
+  }
+
+  .kitchn-logo {
+    padding-left: 35px;
+  }
+
+  .kitchn-logo::before {
+    background-size: 26px 26px;
+    width: 26px;
+    height: 26px;
+  }
+
+  .subbrend-logo {
+    top: 33px;
+    right: 29px;
+    font-size: 25px;
+  }
+
+  .blockquote {
+    padding-top: 240px;
+    padding-left: 40px;
+    font-size: 13px;
+  }
+
+  .pagination {
+    left: 40px;
+    bottom: 120px;
+  }
+
+  .pagination button {
+    font-size: 17px;
+  }
+
+  .pagination span {
+    font-size: 17px;
+    margin: 0 5px;
+  }
+
+  .btn-buy {
+    left: 42px;
+    bottom: 44px;
+    font-size: 18px;
+    padding: 15px 25px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .slideshow-container {
+    max-width: 685px;
+    max-height: 400px;
+    margin: 40px;
+  }
+
+  .slide-left {
+    max-width: 352px;
+    width: 139%;
+  }
+
+  .samsung-logo {
+    top: 70px;
+    left: 25px;
+    width: 120px;
+  }
+
+  @keyframes slideInAndMoveUp {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    50% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-40px);
+      opacity: 1;
+    }
+  }
+
+  .subbrend-logo {
+    top: 25px;
+    right: 25px;
+    font-size: 20px;
+  }
+
+  .slogan {
+    top: 80px;
+    left: 25px;
+  }
+
+  .slogan p {
+    font-size: 18px;
+  }
+
+  .text-down {
+    transform: translateY(25px);
+  }
+
+  .text-up {
+    transform: translateY(0px);
+  }
+
+  .kitchn-logo {
+    position: relative;
+    padding-left: 25px;
+  }
+
+  .kitchn-logo::before {
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .text-down {
+    transform: translateY(10px);
+  }
+
+  .text-up {
+    transform: translateY(0px);
+  }
+
+  .blockquote {
+    padding-top: 190px;
+    padding-left: 25px;
+    font-size: 10px;
+    animation: slideInFromRight 0.8s ease-out;
+    transition: transform 0.3 ease-in-out;
+  }
+
+  .pagination {
+    left: 30px;
+    bottom: 90px;
+  }
+
+  .pagination button {
+    font-size: 16px;
+  }
+
+  .pagination span {
+    font-size: 16px;
+    margin: 0 5px;
+  }
+
+  .btn-buy {
+    bottom: 32px;
+    left: 27px;
+    font-size: 18px;
+    padding: 10px 10px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .slideshow-container {
+    max-width: 555px;
+    max-height: 316px;
+    margin: 10px;
+  }
+
+  .slide-left {
+    max-width: 291px;
+    width: 182%;
+  }
+
+  .samsung-logo {
+    top: 60px;
+    left: 15px;
+    width: 75px;
+  }
+
+  @keyframes slideInAndMoveUp {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    50% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-35px);
+      opacity: 1;
+    }
+  }
+
+  .subbrend-logo {
+    top: 19px;
+    right: 15px;
+    font-size: 17px;
+  }
+
+  .slogan {
+    top: 60px;
+    left: 15px;
+  }
+
+  .slogan p {
+    font-size: 14px;
+  }
+
+  .text-down {
+    transform: translateY(15px);
+  }
+
+  .text-up {
+    transform: translateY(0px);
+  }
+
+  .kitchn-logo {
+    padding-left: 25px;
+  }
+
+  .kitchn-logo::before {
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .blockquote {
+    padding-top: 140px;
+    padding-left: 15px;
+    font-size: 9px;
+  }
+
+  .pagination {
+    left: 17px;
+    bottom: 70px;
+  }
+
+  .pagination button {
+    font-size: 15px;
+  }
+
+  .pagination span {
+    font-size: 15px;
+    margin: 0 5px;
+  }
+
+  .btn-buy {
+    bottom: 22px;
+    left: 28px;
+    font-size: 15px;
+    padding: 8px 8px;
+  }
+}
